@@ -8,14 +8,12 @@ initialize();
 
 function initialize() {
     document.addEventListener("DOMContentLoaded", function () {
-        var formNodes = document.getElementById("personal-data-form").childNodes;
+        var elements = document.getElementById("personal-data-form").elements;
 
-        for (var i = 0; i <  formNodes.length; i++) {
-            if (formNodes[i].className = "form-input") {
-                formNodes[i].addEventListener("change", function () {
-                    generateText();
-                })
-            }
+        for (var i = 0; i <  elements.length; i++) {
+            elements[i].addEventListener("change", function () {
+                generateText();
+            });
         }
     })
 }
@@ -46,7 +44,7 @@ function addQuestion() {
 }
 
 function getProfileIntroduction(name, age, city, job) {
-    return "Ik ben " + name.toLowerCase() + " en ben " + age + " jaar en ben op zoek naar een baan als " + job.toLowerCase() + ".<br>"
+    return "Ik ben " + name + " en ben " + age + " jaar en ben op zoek naar een baan als " + job.toLowerCase() + ".<br>"
         + "Mijn voorkeur naar werkplaats is in de buurt van " + city.toLowerCase() + ". "
 }
 
