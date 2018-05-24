@@ -11,7 +11,7 @@ function initialize() {
         var elements = document.getElementById("personal-data-form").elements;
 
         for (var i = 0; i <  elements.length; i++) {
-            elements[i].addEventListener("change", function () {
+            elements[i].addEventListener("keydown", function () {
                 generateText();
             });
         }
@@ -45,7 +45,7 @@ function addQuestion() {
 
 function getProfileIntroduction(name, age, city, job) {
     return "Ik ben " + name + " en ben " + age + " jaar en ben op zoek naar een baan als " + job.toLowerCase() + ".<br>"
-        + "Mijn voorkeur naar werkplaats is in de buurt van " + city.toLowerCase() + ". "
+        + "Mijn voorkeur naar werkplaats is in de buurt van " + city + ". "
 }
 
 function getTextOrPlaceholder(text, placeholder = "___") {
@@ -57,7 +57,8 @@ function updatePreviewText(questions) {
     var html = "";
 
     for (var key in questions) {
-        html += "<p>" + key + "<br>" + questions[key] + "</p>";
+        html += "<ul><li>" + key + "</li><li>" + questions[key] + "</li></ul>";
+        html += "<button class=\"btn btn-danger\" onclick=\"removeQuestion(\'" + key + "\')\">Verwijder</button>"
     }
 
     document.getElementById("selected-questions").innerHTML = html;
@@ -71,6 +72,14 @@ function generateProfileBody(questions) {
     }
 
     document.getElementById("profile-body").innerHTML = html;
+}
+
+function removeQuestion(key) {
+    delete questions[key];
+    console.log(questions);
+
+    updatePreviewText(questions);
+    generateProfileBody(questions);
 }
 
 function parseQuestionTemplate(template, value) {

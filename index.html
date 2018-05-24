@@ -6,56 +6,59 @@
 	</head>
 	<body>
 		<div class="container">
-			<div>
-				<h1>Genereer profiel</h1>
-				<div>
-					<form id="personal-data-form" onsubmit="e.preventDefault()">
-						<h2>Personalia</h2>
-						<div class="form-group">
-							<label for="name">Wat is je naam?</label>
-							<input type="text" id="name" class="form-control" name="name">
-						</div>
-						<div class="form-group">
-							<label for="age">Wat is je leeftijd?</label>
-							<input type="text" id="age" class="form-control" name="age">
-						</div>
-						<div class="form-group">
-							<label for="city">In welk gebied zoek je werk?</label>
-							<input type="text" id="city" class="form-control" name="city">
-						</div>
-						<div class="form-group">
-							<label for="job">Naar wat voor baan ben je op zoek?</label>
-							<input type="text" id="job" class="form-control" name="job" class="form-control">
-						</div>
-					</form>
-				</div>
-				<div>
-					<h2>Vragen</h2>
+			<div class="row">
+				<div class="col-md">
+					<h1>Genereer profiel</h1>
 					<div>
-						<div class="form-group">
-							<label for="question-select">Kies een vraag:</label>
-							<select id="question-select" name="question-select" class="form-control">
-								<option value="-1">Kies een vraag: </option>
-								<option>Hoeveel jaar ervaring heb je?</option>
-								<option>Wat is je hoogst genote opleiding?</option>
-							</select>
-						</div>
-						<div class="form-group">
-							<label for="question-answer">Vul een antwoord in:</label>
-							<input type="text" id="question-answer" name="question-answer" class="form-control">
-						</div>
-						<button id="question-add-button" class="btn btn-primary" onclick="addQuestion()">Voeg vraag toe:</button>
+						<form id="personal-data-form" onsubmit="e.preventDefault()">
+							<h2>Personalia</h2>
+							<div class="form-group">
+								<label for="name">Wat is je naam?</label>
+								<input type="text" id="name" class="form-control" name="name">
+							</div>
+							<div class="form-group">
+								<label for="age">Wat is je leeftijd?</label>
+								<input type="text" id="age" class="form-control" name="age">
+							</div>
+							<div class="form-group">
+								<label for="city">In welk gebied zoek je werk?</label>
+								<input type="text" id="city" class="form-control" name="city">
+							</div>
+							<div class="form-group">
+								<label for="job">Naar wat voor baan ben je op zoek?</label>
+								<input type="text" id="job" class="form-control" name="job" class="form-control">
+							</div>
+						</form>
 					</div>
-					<h2>Ingevulde vragen</h2>
-					<div id="selected-questions">
+					<div>
+						<h2>Vragen</h2>
+						<div>
+							<div class="form-group">
+								<label for="question-select">Kies een vraag:</label>
+								<select id="question-select" name="question-select" class="form-control">
+									<option value="-1">Kies een vraag: </option>
+									<option>Hoeveel jaar ervaring heb je?</option>
+									<option>Wat is je hoogst genote opleiding?</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="question-answer">Vul een antwoord in:</label>
+								<input type="text" id="question-answer" name="question-answer" class="form-control">
+							</div>
+							<button id="question-add-button" class="btn btn-primary" onclick="addQuestion()">Voeg vraag toe:</button>
+						</div>
 					</div>
 				</div>
+				<div class="col-md">
+					<h2>Profieltekst</h2>
+					<p id="profile-introduction"></p>
+					<p id="profile-body"></p>
+
+					<h2>Kern structuur</h2>
+					<div id="selected-questions"></div>
+				</div>
 			</div>
-			<div>
-				<h2>Profieltekst</h2>
-				<p id="profile-introduction"></p>
-				<p id="profile-body"></p>
-			</div>
+			
 		</div>
 	</body>
 </html>
