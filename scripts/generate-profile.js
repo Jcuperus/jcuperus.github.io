@@ -1,7 +1,7 @@
 questions = [];
 questionTemplates = {
     "Hoeveel jaar ervaring heb je?": "Ik heb <value> jaar werkervaring.",
-    "Wat is je hoogst genote opleiding?": "Mijn hoogst genote opleiding is <value>."
+    "Wat is je hoogst genoten opleiding?": "Mijn hoogst genoten opleiding is <value>."
 }
 
 initialize();
