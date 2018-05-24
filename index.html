@@ -1,8 +1,29 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<script src="./scripts/generate-profile.js"></script>
 	</head>
 	<body>
-		<h1>Hello World!</h1>
+		<div>
+			<h1>Genereer profiel</h1><br>
+			<label for="name">Wat is je naam?</label>
+			<input type="text" id="name" name="name"><br>
+			<label for="age">Wat is je leeftijd?</label><br>
+			<input type="text" id="age" name="age"><br>
+			<label for="city">Waar kom je vandaan?</label><br>
+			<input type="text" id="city" name="city"><br>
+			<label for="hobby">Wat is je favoriete hobby?</label><br>
+			<input type="text" id="hobby" name="hobby"><br>
+			<label for="job">Naar wat voor baan ben je op zoek?</label><br>
+			<input type="text" id="job" name="job"><br>
+			<button id="submit-button" onclick="generateText()">Genereer profiel</button>
+		</div>
+		<hr>
+		<div>
+			<p id="profile-text">
+				hallo
+			</p>
+		</div>
+		
 	</body>
 </html>
