@@ -5,22 +5,50 @@
 	</head>
 	<body>
 		<div>
-			<h1>Genereer profiel</h1><br>
-			<label for="name">Wat is je naam?</label><br>
-			<input type="text" id="name" name="name"><br>
-			<label for="age">Wat is je leeftijd?</label><br>
-			<input type="text" id="age" name="age"><br>
-			<label for="city">Waar kom je vandaan?</label><br>
-			<input type="text" id="city" name="city"><br>
-			<label for="hobby">Wat is je favoriete hobby?</label><br>
-			<input type="text" id="hobby" name="hobby"><br>
-			<label for="job">Naar wat voor baan ben je op zoek?</label><br>
-			<input type="text" id="job" name="job"><br>
-			<button id="submit-button" onclick="generateText()">Genereer profiel</button>
+			<h1>Genereer profiel</h1>
+			<div>
+				<form id="personal-data-form" onsubmit="e.preventDefault()">
+					<h2>Personalia</h2>
+					<label for="name">Wat is je naam?</label><br>
+					<input type="text" id="name" class="form-input" name="name"><br>
+					<label for="age">Wat is je leeftijd?</label><br>
+					<input type="text" id="age" class="form-input" name="age"><br>
+					<label for="city">In welk gebied zoek je werk?</label><br>
+					<input type="text" id="city" class="form-input" name="city"><br>
+					<label for="job">Naar wat voor baan ben je op zoek?</label><br>
+					<input type="text" id="job" class="form-input" name="job">
+				</form>
+			</div>
+			<hr>
+			<div>
+				<h2>Vragen</h2>
+				<div>
+					<label for="question-select">Kies een vraag:</label><br>
+					<select id="question-select" name="question-select">
+						<option value="-1">Kies een vraag: </option>
+						<option>Hoeveel jaar ervaring heb je?</option>
+						<option>Wat is je hoogst genote opleiding?</option>
+						<option></option>
+					</select><br><br>
+					<label for="question-answer">Vul een antwoord in:</label><br>
+					<input type="text" id="question-answer" name="question-answer"><br>
+					<button id="question-add-button" onclick="addQuestion()">Voeg vraag toe:</button>
+				</div>
+				<h2>Ingevulde vragen</h2>
+				<div id="selected-questions">
+					<p>
+						Vraag:<br>
+						Antwoord:</br>
+					</p>
+				</div>
+			</div>
+			
 		</div>
 		<hr>
 		<div>
-			<p id="profile-text"></p>
+			<h2>Profieltekst</h2>
+			<p id="profile-introduction"></p>
+			<p id="profile-body"></p>
 		</div>
 		
 	</body>
