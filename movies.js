@@ -1,5 +1,5 @@
 const key = "bf0bea97";
-const baseUrl = "http://www.omdbapi.com/";
+const baseUrl = "https://www.omdbapi.com/";
 
 let searchField;
 let moviesContainer;
@@ -88,14 +88,12 @@ function getMovieCardDom(title, imdbId, type, year, poster) {
     let titleElement = document.createElement("h3");
     titleElement.className = "card-title";
     titleElement.appendChild(document.createTextNode(title))
-
     body.appendChild(titleElement);
 
     let yearElement = document.createElement("h5");
     yearElement.classList.add("card-subtitle");
     yearElement.classList.add("text-muted");
     yearElement.appendChild(document.createTextNode(year));
-
     body.appendChild(yearElement);
 
     card.appendChild(body);
@@ -104,7 +102,6 @@ function getMovieCardDom(title, imdbId, type, year, poster) {
     footer.classList.add("card-footer");
     footer.classList.add("text-muted");
     footer.appendChild(document.createTextNode(imdbId));
-
     card.appendChild(footer);
 
     return card;
