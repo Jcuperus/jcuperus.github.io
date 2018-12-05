@@ -117,7 +117,7 @@ function getRowDom() {
 
 function getColDom() {
     let col = document.createElement("div");
-    col.className = "col-md-4";
+    col.className = "col-sm-4";
 
     return col;
 }
